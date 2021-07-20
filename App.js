@@ -8,11 +8,16 @@ export default function App() {
 		Camera.requestCameraPermissionsAsync();
 	}, []);
 
+	const onBarCodeScanned = (x) => {
+		console.log(x);
+	};
+
 	return (
 		<View style={styles.container}>
 			<Camera
 				style={{ width: 300, height: 300 }}
 				type={Camera.Constants.Type.back}
+				onBarCodeScanned={onBarCodeScanned}
 			/>
 			<Text>AAA</Text>
 			<StatusBar style="auto" />
